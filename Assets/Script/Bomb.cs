@@ -30,7 +30,7 @@ public class Bomb : MonoBehaviour
             if (hit.CompareTag("Destructible"))
             {
                 Destroy(hit.gameObject);
-                //FindObjectOfType<ScoreManager>().AddScore(10);
+                FindObjectOfType<ScoreManager>().AddScore(10);
             }
         }
 
