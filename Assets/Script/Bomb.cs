@@ -18,19 +18,30 @@ public class Bomb : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            Rigidbody rb = hit.GetComponent<Rigidbody>();
-
-            if (rb != null)
-            {
-                // Newton Law: F = ma (เรากำหนด force ไปเลย)
-                rb.AddExplosionForce(force, transform.position, radius);
-            }
-
-            // destroy object
             if (hit.CompareTag("Destructible"))
             {
-                Destroy(hit.gameObject);
-                FindObjectOfType<ScoreManager>().AddScore(10);
+                Rigidbody rb = hit.GetComponent<Rigidbody>();
+
+                if (rb == null)
+                {
+                    rb = hit.gameObject.AddComponent<Rigidbody>();
+                }
+
+                // 🔥 ปลดล็อกก่อน
+                rb.isKinematic = false;
+
+                // ใส่แรงระเบิด
+                rb.AddExplosionForce(force, transform.position, radius, 2f);
+
+                // หายหลัง 3 วิ
+                Destroy(hit.gameObject, 3f);
+
+                // score
+                ScoreManager sm = FindObjectOfType<ScoreManager>();
+                if (sm != null)
+                {
+                    sm.AddScore(10);
+                }
             }
         }
 
