@@ -1,19 +1,29 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Bomb : MonoBehaviour
 {
     public float delay = 2f;
     public float radius = 5f;
-    public float force = 500f;
+    public float force = 100f;
+    public GameObject explosionFX;
+
+    private ScoreManager scoreManager;
 
     void Start()
     {
-        Invoke("Explode", delay);
+        scoreManager = FindObjectOfType<ScoreManager>();
+
+        Invoke(nameof(Explode), delay);
     }
 
     void Explode()
     {
+        if (explosionFX != null)
+        {
+            GameObject fx = Instantiate(explosionFX, transform.position, Quaternion.identity);
+            Destroy(fx, 2f);
+        }
+
         Collider[] hits = Physics.OverlapSphere(transform.position, radius);
 
         foreach (Collider hit in hits)
@@ -27,20 +37,20 @@ public class Bomb : MonoBehaviour
                     rb = hit.gameObject.AddComponent<Rigidbody>();
                 }
 
-                // 🔥 ปลดล็อกก่อน
                 rb.isKinematic = false;
 
-                // ใส่แรงระเบิด
-                rb.AddExplosionForce(force, transform.position, radius, 2f);
+                // ปรับค่าฟิสิกส์ให้กระเด็นแรงขึ้น
+                rb.linearDamping = 0.5f;
 
-                // หายหลัง 3 วิ
-                Destroy(hit.gameObject, 3f);
 
-                // score
-                ScoreManager sm = FindObjectOfType<ScoreManager>();
-                if (sm != null)
+                rb.AddExplosionForce(force, transform.position, radius, 2f, ForceMode.Impulse);
+
+                // delay destroy เพื่อให้เห็นฟิสิกส์
+                Destroy(hit.gameObject, 10f);
+
+                if (scoreManager != null)
                 {
-                    sm.AddScore(10);
+                    scoreManager.AddScore(10);
                 }
             }
         }
