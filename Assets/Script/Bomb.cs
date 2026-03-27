@@ -50,7 +50,7 @@ public class Bomb : MonoBehaviour
 
                 if (scoreManager != null)
                 {
-                    scoreManager.AddScore(10);
+                    scoreManager.AddScore(100);
                 }
             }
         }
