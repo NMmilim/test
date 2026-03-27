@@ -36,7 +36,12 @@ public class ScoreManager : MonoBehaviour
             hasWon = true;
 
             // เปลี่ยนไปหน้า Credit
-            SceneManager.LoadScene("EndCredits");
+            FadeManager fade = FindAnyObjectByType<FadeManager>();
+
+            if (fade != null)
+            {
+                fade.FadeToScene("EndCredits");
+            }
         }
     }
 

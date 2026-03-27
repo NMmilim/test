@@ -14,14 +14,14 @@ public class Bomb : MonoBehaviour
 
     void Start()
     {
-        scoreManager = FindObjectOfType<ScoreManager>();
-      
+        scoreManager = FindFirstObjectByType<ScoreManager>();
+
 
         audioSource = GetComponent<AudioSource>();
 
         if (audioSource == null)
             audioSource = gameObject.AddComponent<AudioSource>();
-
+        
 
         Invoke(nameof(Explode), delay);
     }
