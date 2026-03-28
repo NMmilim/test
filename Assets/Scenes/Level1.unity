@@ -5446,7 +5446,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9068858478654162844, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
   m_PrefabInstance: {fileID: 2164576443997786168}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232740086}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ab137ca8a3d18ca498e0d81c974b62aa, type: 3}
@@ -9554,11 +9554,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4680263003871767381, guid: 70ea4865e2694944fa398c288da016d8, type: 3}
---- !u!1 &1232740086 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3713169658128122668, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
-  m_PrefabInstance: {fileID: 2164576443997786168}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1235309694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5911989602187058120, guid: cb5ba684c46e0134eb12f49fda57341b, type: 3}
@@ -10975,33 +10970,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5695495534631207743, guid: 70ea4865e2694944fa398c288da016d8, type: 3}
---- !u!1 &1443866104 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 872353541487814095, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
-  m_PrefabInstance: {fileID: 2164576443997786168}
-  m_PrefabAsset: {fileID: 0}
---- !u!64 &1443866109
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1443866104}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1446362220 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8265018897646071136, guid: cb5ba684c46e0134eb12f49fda57341b, type: 3}
@@ -14629,34 +14597,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5177534370074493528, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
   m_PrefabInstance: {fileID: 2164576443997786168}
   m_PrefabAsset: {fileID: 0}
---- !u!64 &1887860137
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232740086}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!114 &1887860138 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 417132635988355505, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
   m_PrefabInstance: {fileID: 2164576443997786168}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1232740086}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86307cb7856aefe469109ccd24e73e09, type: 3}
@@ -18428,6 +18374,10 @@ PrefabInstance:
       propertyPath: restartText
       value: 
       objectReference: {fileID: 1758393074}
+    - target: {fileID: 3268120296339035566, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3713169658128122668, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -18488,12 +18438,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3713169658128122668, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1887860137}
-    - targetCorrespondingSourceObject: {fileID: 872353541487814095, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1443866109}
     - targetCorrespondingSourceObject: {fileID: 6619375951293270225, guid: 0ddec2145613da448b718ad233b76fb2, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1343685936}

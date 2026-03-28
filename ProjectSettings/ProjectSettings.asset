@@ -968,11 +968,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: 4395e284-f852-4d8a-abac-4ee03f01f99e
+  cloudProjectId: 72908650-6444-44a4-8269-83b5d192c205
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Test
-  organizationId: namo5525633
+  organizationId: unity_8bf000a8c9788aff3f2d
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}
