@@ -76,7 +76,7 @@ public class Bomb : MonoBehaviour
                 {
                     if (scoreManager != null)
                     {
-                        int score = Mathf.RoundToInt((rb.mass * 100f) / 10f);
+                        int score = Mathf.RoundToInt((rb.mass * 10f) / 2f);
                         scoreManager.AddScore(score);
                     }
 
