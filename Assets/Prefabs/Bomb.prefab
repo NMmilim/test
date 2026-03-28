@@ -123,8 +123,8 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 43107589748243517}
   serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
+  m_Mass: 3
+  m_LinearDamping: 0.05
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -139,7 +139,7 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
 --- !u!114 &-4527328420699401078
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bomb
   delay: 2
   radius: 5
-  force: 100
+  force: 400
   explosionFX: {fileID: 100012, guid: 3364c97de68d3a147af572d1c71c6455, type: 3}
   explosionSound: {fileID: 8300000, guid: 48aefce27fbdcef46932a4b9f5120de6, type: 3}
   fuseSound: {fileID: 8300000, guid: aa4d7c868952a4c4a954d8f912523229, type: 3}
