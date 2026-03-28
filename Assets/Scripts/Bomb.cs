@@ -55,14 +55,15 @@ public class Bomb : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            if (hit.CompareTag("Destructible"))
+
+
+            if (hit.CompareTag("Destructible") || hit.CompareTag("Player"))
             {
                 // ฟิสิกส์ทำงานเสมอ
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
 
                 if (rb == null)
                     rb = hit.gameObject.AddComponent<Rigidbody>();
-
                 rb.isKinematic = false;
                 rb.linearDamping = 0.5f;
 
@@ -74,12 +75,18 @@ public class Bomb : MonoBehaviour
                 if (d != null && !d.hasScored)
                 {
                     if (scoreManager != null)
-                        scoreManager.AddScore(100);
+                    {
+                        int score = Mathf.RoundToInt((rb.mass * 10f) / 2f);
+                        scoreManager.AddScore(score);
+                    }
 
-                    d.hasScored = true; //  ล็อกไม่ให้ได้อีก
+                    d.hasScored = true;
                 }
-
-                Destroy(hit.gameObject, 10f);
+                if (hit.CompareTag("Player"))
+                {
+                    continue;
+                }
+                    Destroy(hit.gameObject, 10f);
             }
         }
         AudioSource.PlayClipAtPoint(explosionSound, transform.position);
