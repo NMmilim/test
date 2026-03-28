@@ -7,6 +7,7 @@ public class RestartGame : MonoBehaviour
 {
     public float restartDelay = 1f;
     private bool isRestarting = false;
+    public RestartGame restartGame;
     public TMP_Text restartText;
 
     void Update()

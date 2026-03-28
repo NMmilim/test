@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -10,6 +11,18 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
 
     private bool hasWon = false;
+    IEnumerator LoadEndSceneAfterDelay()
+    {
+        scoreText.text = "<size=150%><color=yellow>YOU WIN!</color></size>";
+
+        BombShooter shooter = FindFirstObjectByType<BombShooter>();
+        if (shooter != null)
+            shooter.enabled = false;
+
+        yield return new WaitForSecondsRealtime(2f);
+
+        SceneManager.LoadScene("EndCredits");
+    }
 
     void Start()
     {
@@ -35,8 +48,7 @@ public class ScoreManager : MonoBehaviour
         {
             hasWon = true;
 
-            // เปลี่ยนไปหน้า Credit
-            SceneManager.LoadScene("EndCredits");
+            StartCoroutine(LoadEndSceneAfterDelay());
         }
     }
 
